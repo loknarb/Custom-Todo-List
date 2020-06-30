@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+            integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA="
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <header>
+            <h1>What To Do?</h1>
+        </header>
+        <form name="todoForm" onsubmit="return validateForm()">
+            <input
+                type="text"
+                placeholder="What todo?"
+                class="todoInput"
+                name="todo"
+            />
+            <p id="error"></p>
+            <div class="select">
+                <button class="todoBtn" type="submit">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+                <div class="todoDropdown">
+                    <a class="filterUncompleted" value="uncompleted"
+                        >Uncompleted</a
+                    >
+
+                    <a class="filterCompleted" value="completed">Completed</a>
+
+                    <a class="filterTodo" value="todo">Unfiltered</a>
+                    <a class="filterTrashed" value="trashed">Trashed</a>
+                </div>
+            </div>
+        </form>
+        <div class="todoContainer"></div>
+    </body>
+    <script src="todo.js"></script>
+</html>

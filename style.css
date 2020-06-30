@@ -1,0 +1,366 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --primary: rgba(11, 50, 5, 0.53);
+    --secondary: rgb(213, 213, 213);
+    --third: rgb(62, 62, 62);
+    --fourth: rgb(31, 31, 31);
+    --fifth: rgba(61, 61, 61, 0.571);
+}
+body {
+    background: var(--fourth);
+    background: rgb(248, 248, 248);
+    background: linear-gradient(
+        317deg,
+        rgba(31, 31, 31, 1) 90%,
+        rgba(0, 212, 255, 1) 100%
+    );
+    min-height: 100vh;
+    color: var(--primary);
+    font-family: "Montserrat", sans-serif;
+    background-image: url("todo background.webp");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin-left: -35%;
+    /* color  */
+}
+header,
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header {
+    margin-top: 15vh;
+    font-size: 2rem;
+}
+form {
+    margin-top: 5vh;
+}
+form input,
+form button {
+    font-size: 1.5rem;
+    padding: 0.2rem;
+    padding-top: 3px;
+    padding-bottom: 4px;
+    border: transparent;
+    background: var(--fifth);
+    color: var(--secondary);
+    font-family: "Montserrat", sans-serif;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+form input:hover {
+    background: var(--third);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+form input:focus {
+    background: var(--third);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+.todoInput {
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    padding-left: 0.5rem;
+}
+.todoBtn {
+    border-top-right-radius: 0.5rem;
+
+    font-size: 1.5rem;
+    border-bottom-right-radius: 0.5rem;
+    padding-right: 0.4rem;
+    transition: all 0.3s ease;
+}
+form button:hover {
+    background: transparent;
+    box-shadow: none;
+    color: var(--primary);
+    transform: rotate(0.25turn);
+    border: none;
+}
+
+/* * TODO Section */
+.todo {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(62, 62, 62, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.109);
+    border-radius: 0.3rem;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    transition: all 0.5s ease;
+    /* min-width: 20vw; */
+    position: relative;
+}
+form button {
+    font-size: 1.2rem;
+    padding: none;
+    margin-left: 0px;
+    padding-left: 0.5rem;
+    padding-right: 1.4rem;
+    border: transparent;
+    color: var(--secondary);
+    font-family: "Montserrat", sans-serif;
+    cursor: pointer;
+}
+.todoContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.todoItem {
+    min-width: 20vw;
+    list-style: none;
+    padding-left: 0.4rem;
+    padding-right: 0.3rem;
+    padding-top: 0.1rem;
+    padding-bottom: 0.3rem;
+    border: solid 1px transparent;
+    border-radius: 0.2rem;
+    /* background-color: rgba(62, 62, 62, 0.15); */
+    color: #ffffff;
+    text-shadow: 1px 1px rgb(25, 57, 21);
+
+    margin-top: 5px;
+    max-height: 1.7rem;
+    padding-left: 0.6rem;
+    letter-spacing: -0.025em;
+    /* font-weight: 600; */
+    flex: 1;
+    font-size: 18px;
+}
+
+.trashBtn,
+.compBtn {
+    border: transparent;
+    background-color: rgba(62, 62, 62, 0);
+    color: var(--secondary);
+    padding-left: 7px;
+    padding-right: 7px;
+    cursor: pointer;
+}
+.compBtn {
+    color: #6d806d;
+}
+
+.trashBtn {
+    margin-left: 0px;
+    border-left: 1px solid rgba(255, 255, 255, 0.109);
+    border-right: 1px solid rgba(255, 255, 255, 0.109);
+    color: #ab8282;
+}
+.trashBtn:hover {
+    color: #a93d3d;
+}
+.compBtn:hover {
+    color: #479a4a;
+}
+.fa-check,
+.fa-trash,
+.fa-edit {
+    pointer-events: none;
+}
+.completed {
+    border: solid #829682 1px;
+    background-color: #82968263;
+    opacity: 0.8;
+}
+.trashed {
+    opacity: 0.8;
+    /* display: none; */
+    border: solid #ab8282 1px;
+    background-color: #ab828261;
+}
+/* TODO Make Buttons Fade out and in with transistions when .todo is hovered */
+/* TODO Padding on left input field */
+/* TODO Add darkness to background input field and highlight to current color*/
+/* TODO Add Input text */
+/* TODO Make GIT Look for Top right website */
+/* TODO Resize FORM scale to match more responsiveness figure out widths maybe 3 media queries this time*/
+/* * TODO Section */
+/* select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+    color: var(--primary);
+    width: 2rem;
+    cursor: pointer;
+    background: var(--third);
+} */
+.select {
+    position: relative;
+    display: inline-block;
+}
+/* .select::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+} */
+.select:hover .todoDropdown {
+    display: block;
+}
+.todoDropdown {
+    display: none;
+    position: absolute;
+    background-color: var(--third);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border: 1px solid transparent;
+    border-radius: 0.3em;
+}
+.filterTodo {
+    color: #558c55;
+}
+.filterCompleted {
+    color: #829682;
+}
+.filterTrashed {
+    color: #ab8282;
+}
+.filterUncompleted {
+    color: #787878;
+}
+.todoDropdown a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.todoDropdown a:hover {
+    background-color: var(--fourth);
+    cursor: pointer;
+}
+
+.editableInput {
+    background-color: rgb(140, 140, 140);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.109);
+    border-radius: 0.3rem;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    z-index: 1;
+    display: block;
+    margin-bottom: -40px;
+    margin-top: 0px;
+    padding-bottom: 2px;
+    width: 100%;
+    left: -10px;
+    margin-bottom: -40px;
+    margin-top: -2px;
+    left: -3px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    font-size: 18px;
+    padding-left: 0.6rem;
+}
+.editableForm {
+    margin-top: 48px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -72px;
+    right: 7px;
+    display: block;
+    margin-right: -8px;
+    margin-right: -72px;
+    left: -11px;
+    margin-top: 43px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+.editBtn {
+    top: 7px;
+    margin-right: 0px;
+    position: relative;
+    z-index: 1;
+    right: -86%;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding-top: 4px;
+    padding-bottom: 6px;
+    padding-right: 1.5rem;
+}
+.editBtn:hover {
+    background: #195e007d;
+    color: rgb(255, 255, 255);
+    transform: none;
+}
+.inputError {
+    border: 1.6px solid rgb(155, 51, 51);
+    border-right-color: transparent;
+}
+.inputPass {
+    border: none;
+}
+.inputButtonError {
+    border: 1.6px solid rgb(155, 51, 51);
+    /* border-top-right-radius: 0.6rem;
+    border-bottom-right-radius: 0.6rem; */
+    border-left-color: transparent;
+}
+.inputButtonPass {
+    border: none;
+}
+.editInputError {
+    border: 2px solid rgb(155, 51, 51);
+    padding-bottom: 4px;
+}
+.editInputPass {
+    border: 1px solid rgba(255, 255, 255, 0.109);
+    padding-bottom: 9px;
+}
+@media screen and (max-width: 1200px) {
+    .todoItem {
+        min-width: 50vw;
+    }
+}
+@media screen and (max-width: 700px) {
+    body {
+        margin-left: 0px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .todoItem {
+        min-width: 75vw;
+    }
+    header {
+        margin-top: 3vh;
+        font-size: 1.7rem;
+    }
+}
+@media screen and (max-width: 400px) {
+    .todoItem {
+        min-width: 75vw;
+        font-size: 15px;
+    }
+    header {
+        margin-top: 3vh;
+        font-size: 1.5rem;
+    }
+    form input,
+    form button {
+        font-size: 1.2rem;
+    }
+    .todoBtn {
+        font-size: 1.2rem;
+    }
+    .todoContainer {
+        padding-left: 9px;
+        padding-right: 14px;
+    }
+    .editableForm {
+        top: -68px;
+    }
+    .editableInput {
+        padding-bottom: 7px;
+        padding-top: 7px;
+        font-size: 15px;
+    }
+}
