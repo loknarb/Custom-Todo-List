@@ -64,7 +64,7 @@ function editForm(event) {
 }
 
 function addTodo(event) {
-    // ! Prevents form from submitting
+    // * Prevents form from submitting
     event.preventDefault();
     if (duplicateLocalTodo(todoInput.value) != "duplicate") {
         // * Creates Todo that contains Check Trash and Submitted Input and Append to UL
@@ -101,7 +101,7 @@ function addTodo(event) {
     }
 }
 function addEditTodo(event) {
-    // ! Prevents form from submitting
+    // * Prevents form from submitting
     let editIcon = event.target;
     event.preventDefault();
     // * Creates Todo that contains Check Trash and Submitted Input and Append to UL
@@ -240,7 +240,7 @@ function saveLocalTodos(saveTodo) {
     todos.push(todoItem);
     localStorage.setItem("todos", JSON.stringify(todos));
 }
-// * Add
+
 function getLocalTodos() {
     let todos;
     //* Check if already saved
